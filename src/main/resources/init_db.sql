@@ -1,0 +1,4 @@
+CREATE TABLE cabinet.client(id int(11) NOT NULL, name VARCHAR(1000) NOT NULL, PRIMARY KEY (id));
+CREATE TABLE cabinet.worker(id int(11) NOT NULL, name varchar(1000) NOT NULL, birthday date DEFAULT NULL, level varchar(7) NOT NULL,  salary int(11) DEFAULT NULL, PRIMARY KEY (id), CHECK (birthday > '1900-01-01'), CHECK (salary>=100 and salary<=100000), CHECK (level IN ('Trainee', 'Junior', 'Middle', 'Senior')));
+CREATE TABLE cabinet.progect(id int(11) NOT NULL, client_id int(11), start_date date, finish_date date, name VARCHAR(1000), PRIMARY KEY (id), FOREIGN KEY (client_id) REFERENCES client (id) );
+CREATE TABLE cabinet.progect_worker(progect_id int(11), worker_id int(11), PRIMARY KEY (progect_id, worker_id), FOREIGN KEY (progect_id) REFERENCES progect (id), FOREIGN KEY (worker_id) REFERENCES worker (id));
