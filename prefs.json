@@ -1,7 +1,7 @@
 {
-  "dbUrl" : "jdbc:mysql://localhost:3306/?user=root",
-  "dbUser" : "root",
-  "dbPassword" : "millenium55LP",
+  "dbUrl" : "jdbc:mysql://172.16.48.171:3306/cabinet",
+  "dbUser" : "user_shop",
+  "dbPassword" : "shop123",
   "initDbSql" : "src/main/resources/init_db.sql",
   "populateDbSql" : "src/main/resources/populate_db.sql"
 }
